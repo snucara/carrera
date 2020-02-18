@@ -1,0 +1,92 @@
+import graficos2
+import os
+import random
+
+def main():
+
+        contador = 0
+        contador2 = 0
+        avance=(0,1,2)
+        jugar="SI"
+        tecla=" "
+        while True:
+
+              os.system("cls")
+              print("    ")
+              print("caballo 1 :JUGADOR")
+              print("(avanza presionando ENTER)")
+              graficos2.caballito(contador)
+              print("  ")
+              print("------------------------------------------------------------------------------------")
+              print("  ")
+              graficos2.caballito(contador2)
+              print("caballo 2:")
+              print("COMPUTADORA")
+
+
+              if contador<16 and contador2<16:
+                   tecla = input("")
+                   tecla = tecla.upper()
+                   if tecla =="" :
+                        contador=contador+1
+
+
+                   contador2=contador2+(random.choice(avance))
+
+              else:
+
+                  while True:
+                      os.system("cls")
+                      print("    ")
+                      print("caballo 1 :JUGADOR")
+                      print("(avanza presionando ENTER)")
+                      graficos2.caballito(contador)
+                      print("  ")
+                      print("------------------------------------------------------------------------------------")
+                      print("  ")
+                      graficos2.caballito(contador2)
+                      print("caballo 2:")
+                      print("COMPUTADORA")
+                      print("   ")
+                      if contador==16 and contador2==16:
+                          print("------------------------")
+                          print("         EMPATE")
+                          print("------------------------")
+                          print("       ")
+                      elif contador2==16:
+                          print("------------------------")
+                          print("  GANO LA COMPUTADORA")
+                          print("------------------------")
+                          print("    ")
+                      elif contador==16:
+                          print("------------------------")
+                          print("        GANASTE!!!")
+                          print("------------------------")
+                          print("    ")
+
+                      print("     ")
+                      jugar=input("¿jugamos de nuevo?<si-no>")
+                      jugar=jugar.upper()
+
+
+
+                      os.system("cls" )
+
+                      if jugar=="SI" or jugar=="NO":
+                          contador = 0
+                          contador2 = 0
+
+                          break
+
+
+              if jugar!="SI":
+                  break
+
+
+
+
+
+
+
+
+main()
